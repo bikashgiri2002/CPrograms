@@ -1,23 +1,17 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	int num,rem,reverse;
-	reverse=0;
-	printf("enter 4 digit num");
-	scanf("%d",&num);
-	rem=num%10;
-	reverse=reverse*10+rem;
-	num=num/10;
-	rem=num%10;
-	reverse=reverse*10+rem;
-	num=num/10;
-	rem=num%10;
-	reverse=reverse*10+rem;
-	num=num/10;
-	rem=num%10;
-	reverse=reverse*10+rem;
-	printf("%d",reverse);
+int sp,cp;
+printf("enter the cost value:");
+scanf("%d",&cp);
+printf("enter the sell value:");
+scanf("%d",&sp);
+if((sp-cp)>0)
+printf("profit is %d",(sp-cp));
+if (cp-sp>0)
+printf("loss is %d", (cp-sp));
+if (cp==sp)
+printf("no profit,no loss");
+	
 	return 0;
-	
-	
 }

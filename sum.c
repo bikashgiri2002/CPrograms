@@ -1,13 +1,14 @@
 #include<stdio.h>
+
 int main()
 {
-    int num,sum=0,rem;
-    printf("Enter a four digit number :");
-    scanf("%d",&num);
-    rem=num%10 ;
-    sum=sum+rem;
-    rem=num/1000;
-    sum=sum+rem;
-    printf("sum of 1st and 4th digits is : %d",sum);
-    return 0;
+  int a,b;
+  printf("Entre a\n");
+  scanf("%d",&a);
+
+  printf("Enter b\n");
+  scanf("%d",&b);
+  
+  printf("the solution is=%d",a+b);
+  return 0;
 }

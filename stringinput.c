@@ -7,11 +7,15 @@ int main()
 	scanf("%d",&n);
 	printf("Enter the elements:\n");
 	int i=0;
-	while(a[i]='\n')
+	char ch;
+	while(ch !='\n')
 	{
-		scanf("%c",&a[i]);
+		scanf("%c",&ch);
+		a[i]=ch;
 		i++;
 	}
+	a[i]='\0';
+//	gets(a);
 	puts(a);
 	return 0;
 }

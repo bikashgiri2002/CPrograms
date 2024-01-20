@@ -1,0 +1,51 @@
+
+/*void swap(int a,int b);
+void _swap(int *a,int *b);
+int main()
+{
+	int x=3,y=5;
+	swap(x,y);
+	_swap(&x,&y);
+	return 0;
+}
+void swap(int a,int b)
+{
+	int t=a;
+	a=b;
+	b=t;
+	printf("a=%d and b=%d",a,b);
+}
+void _swap(int *a,int *b)
+{
+	int t=*a;
+	*a=*b;
+	*b=t;
+	printf("x=%d and y=%d",*a,*b);
+}*/
+#include <stdio.h>     
+
+int main() {  
+
+    int x, y, *p1, *p2;  
+
+    printf("Please Enter Two different values\n");  
+    scanf("%d %d", &x, &y);  
+    
+    p1 = &x;
+    p2 = &y;
+
+    if(*p1 > *p2) 
+	{
+         printf("The Larges = %d\n", *p1);  
+    } 
+	else if (*p2 > *p1)
+	{ 
+        printf("The Largest = %d\n", *p2); 
+    } 
+	else 
+	{
+		printf("Both are Equal\n");
+    }
+   
+    return 0;  
+} 

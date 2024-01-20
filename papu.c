@@ -1,15 +1,17 @@
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-    int a, b;
-    printf("Enter number a\n");
-    scanf("%d", &a);
-
-    printf("Enter number b\n");
-    scanf("%d", &b);
-
-    printf("The sum is %d\n", a+b);
-
+   int num,rem,sum =0;
+   printf("Enter any number :\n");
+   scanf("%d",&num);
+   int i=10;
+   while (i<= num*10)
+   {
+    rem=num%i;
+    rem=rem/(i/10);
+    sum+=rem;
+    i*=10;
+   }
+   printf("Sum of all digit is : %d",sum);
     return 0;
 }
