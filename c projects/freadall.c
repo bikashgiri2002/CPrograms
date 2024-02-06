@@ -11,9 +11,8 @@ int main()
 {
 	FILE *fp;
 	fp=fopen("student.txt","rb");
-	if(fp==NULL)
-	{
-		printf("Error in Opening!");
+	if(fp == NULL){
+		printf("!error in opening");
 		exit(1);
 	}
 	while(fread(&s,sizeof(s),1,fp) == 1)

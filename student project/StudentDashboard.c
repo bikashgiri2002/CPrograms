@@ -50,25 +50,35 @@ void see(){
 }
 //search by name function
 void search(){
-	char tname[30];
-	printf("**** SEARCH BY NAME ****");
-	printf("\n\nEnter the name: ");
-	fflush(stdin);
-	scanf("%s",tname);
-	FILE *fp;
-	fp=fopen("student.txt","r");
-	if(fp == NULL){
-		printf("!error in opening");
-		return ;
-	}
-	while(fread(&s,sizeof(s),1,fp) == 1){
-		if(strcmp(s.name,tname) == 0){
-			printf("Student Name : %s\n",s.name);
-			printf("Roll_No : %d\n",s.roll);
-			printf("CGPA : %f\n",s.cgpa);
+	char c='y';
+	while(c == 'y'){
+		char tname[30];
+		int x=0;
+		printf("\n\nEnter the name: ");
+		fflush(stdin);
+		scanf("%s",tname);
+		FILE *fp;
+		fp=fopen("student.txt","r");
+		if(fp == NULL){
+			printf("!error in opening");
+			return ;
 		}
+		while(fread(&s,sizeof(s),1,fp) == 1){
+			if(strcmp(s.name,tname) == 0){
+				printf("Student Name : %s\n",s.name);
+				printf("Roll_No : %d\n",s.roll);
+				printf("CGPA : %f\n",s.cgpa);
+				x=1;
+			}
+		}
+		if(x==0){
+			printf("\n%s name not in list\n",tname);	
+		}
+		fclose(fp);
+		printf("\n\nEnter 'y' to search more :");
+			fflush(stdin);
+			scanf("%c",&c);
 	}
-	fclose(fp);
 }
 //update details function
 void update(){
@@ -170,7 +180,7 @@ int main(){
 		case 1:
 			system("cls");
 			add();
-			printf("\n\nenter any key to go to dashboard.....");
+			printf("\n\npress enter  to go to dashboard.....");
 			fflush(stdin);
 			scanf("%c",&c);
 			goto dashboard;
@@ -178,14 +188,15 @@ int main(){
 			system("cls");
 			printf("**** ALL STUDENTS ****\n\n");
 			see();
-			printf("\n\nenter any key to go to dashboard.....");
+			printf("\n\npress enter  to go to dashboard.....");
 			fflush(stdin);
 			scanf("%c",&c);
 			goto dashboard;
 		case 3:
 			system("cls");
+			printf("**** SEARCH BY NAME ****\n");
 			search();
-			printf("\n\nenter any key to go to dashboard.....");
+			printf("\n\npress enter  to go to dashboard.....");
 			fflush(stdin);
 			scanf("%c",&c);
 			goto dashboard;
@@ -193,7 +204,7 @@ int main(){
 			system("cls");
 			printf("**** UPDATE DETAILS ****\n\n");
 			update();
-			printf("\n\nenter any key to go to dashboard.....");
+			printf("\n\npress enter  to go to dashboard.....");
 			fflush(stdin);
 			scanf("%c",&c);
 			goto dashboard;
@@ -201,14 +212,14 @@ int main(){
 			system("cls");
 			printf("**** REMOVE STUDENT ****\n\n");
 			removestudent();
-			printf("\n\nenter any key to go to dashboard.....");
+			printf("\n\npress enter  to go to dashboard.....");
 			fflush(stdin);
 			scanf("%c",&c);
 			goto dashboard;
 		case 6:
 			system("cls");
 			printf("!invelid choose");
-			printf("\n\nenter any key to go to dashboard.....");
+			printf("\n\npress enter  to go to dashboard.....");
 			fflush(stdin);
 			scanf("%c",&c);
 			goto dashboard;
